@@ -15,7 +15,7 @@
             $this->view = new View();
             $this->materialesModel = new MaterialesModel();
             $this->pedidosModel = new PedidosModel();
-            $this->admin = false;
+            $this->admin = true;
         } 
 
         function materiales () { 
