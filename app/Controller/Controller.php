@@ -39,7 +39,7 @@ class Controller
             $this->materialesModel->AgregarMaterial($material, $aceptado, $condicion);
             $this->view->showExito("se ha insertado correctamente");
         } else {
-            $this->view->showError("debe completar los campos de categoria,nombre y precio OBLIGATORIOS");
+            $this->view->showError("debe completar todos los campos");
         }
     }
 }
