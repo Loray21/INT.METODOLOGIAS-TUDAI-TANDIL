@@ -49,6 +49,7 @@
             </div>
         </div>
     </nav>
+
     <div class="modal  fade" id="login" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-md">
             <div class="modal-content">
@@ -92,12 +93,20 @@
         </div>
     </div>
     <div class =" miContainer p-4 "> 
+    <div class="row  align-items-center">
+        <div class="col-4 " >
+            {include file="templates/form.tpl" }
 
-    <h1 class=" text-end fs-1 font-bold"> ¿ Que material aceptamos ? </h1> 
+        </div>
+    <div class="col-8">
+        <h1 class=" text-end fs-1 font-bold"> ¿ Que material aceptamos ? </h1> 
         <div class="  myImg end-0 start-0 "> 
-            {include file="templates/materiales.tpl" }
+            {include file="templates/materiales.tpl"}
+
+
         </div>
     </div>
+</div>
         <link rel="stylesheet" href="{$BASE_URL}css/css.css">
 </body>
 </html>
