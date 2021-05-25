@@ -14,8 +14,8 @@
     $r = new Router(); 
 
     // $r->addRoute("home", "GET", "Controller", "mostrarHome"); ejemplo
-  
+    $r->addRoute("mostrarFormPedido", "GET", "Controller", "showFormPedido");
+    $r->addRoute("nuevoPedido", "POST", "Controller", "agregarPedido");
     // $r->setDefaultRoute("controller", "mostrarHome"); ejemplo
 
     $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']); 
-
