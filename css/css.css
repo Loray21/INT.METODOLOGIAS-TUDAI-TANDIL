@@ -1,3 +1,4 @@
+
 * {
     font-family: Nunito;
 }
@@ -23,4 +24,10 @@
 
 .z-index {
     z-index: -1;
+}
+
+.miContainer  {  
+    background-image: url( ../imagenes/tablaMaterialesBackground.png); 
+    background-position: center; 
+    overflow: hidden;
 }

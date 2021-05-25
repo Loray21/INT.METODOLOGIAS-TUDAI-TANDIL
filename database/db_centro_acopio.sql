@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-05-2021 a las 16:41:51
--- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 8.0.6
+-- Tiempo de generación: 24-05-2021 a las 23:19:24
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,6 +33,15 @@ CREATE TABLE `material` (
   `aceptado` tinyint(1) NOT NULL,
   `condicion` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `material`
+--
+
+INSERT INTO `material` (`id`, `material`, `aceptado`, `condicion`) VALUES
+(1, 'Carton', 1, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
+(2, 'Plastico', 0, 'ssssssssssss'),
+(3, 'Fierro', 1, 'fgffffds');
 
 -- --------------------------------------------------------
 

@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Roboto:wght@100&family=Secular+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Odor+Mean+Chey&family=Roboto:wght@100&family=Secular+One&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="{$BASE_URL}css/css.css">
+  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <title>Coopearativa</title>
 
@@ -76,7 +76,7 @@
             </div>
         </div>
     </div>
-    <div class="container mt-5 pt-5 position-relative">
+    <div class="container mt-5 pt-5 position-relative h-75 ">
         <div class="row">
             <div>
                 <h1 class="fs-1 font-bold">
@@ -91,6 +91,13 @@
             </div>
         </div>
     </div>
+    <div class =" miContainer p-4 "> 
 
+    <h1 class=" text-end fs-1 font-bold"> ¿ Que material aceptamos ? </h1> 
+        <div class="  myImg end-0 start-0 "> 
+            {include file="templates/materiales.tpl" }
+        </div>
+    </div>
+        <link rel="stylesheet" href="{$BASE_URL}css/css.css">
 </body>
 </html>

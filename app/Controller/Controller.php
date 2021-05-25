@@ -14,11 +14,14 @@
             $this->view = new View();
             $this->materialesModel = new MaterialesModel();
             $this->pedidosModel = new PedidosModel();
+        } 
+
+        private function materiales () { 
+            return $this->materialesModel->getMateriales(); 
         }
 
         function showHome() {
-            $isUserLoggedIn = $this->isUserLoggedIn();
-            $this->view->renderHome($isUserLoggedIn);
+            $this->view->renderHome( $this->isUserLoggedIn(), $this->materiales());
         }
 
         function login(){ // el usuario y contraseña están hardcodeados
