@@ -10,5 +10,10 @@ require_once('libs/smarty/libs/Smarty.class.php');
             $this->smarty = new Smarty();
         }
 
+        function renderHome($isUserLoggedIn) {
+            $this->smarty->assign("BASE_URL", BASE_URL);
+            $this->smarty->assign("isUserLoggedIn", $isUserLoggedIn );
+            $this->smarty->display("templates/page.tpl");
+        }
     }
 ?>

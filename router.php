@@ -13,9 +13,12 @@
 
     $r = new Router(); 
 
-    // $r->addRoute("home", "GET", "Controller", "mostrarHome"); ejemplo
+    $r->addRoute("login", "POST", "Controller", "login");
+    $r->addRoute("logout", "GET", "Controller", "logout");
+
+    $r->addRoute("home", "GET", "Controller", "showHome");
   
-    // $r->setDefaultRoute("controller", "mostrarHome"); ejemplo
+    $r->setDefaultRoute("controller", "showHome");
 
     $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']); 
 
