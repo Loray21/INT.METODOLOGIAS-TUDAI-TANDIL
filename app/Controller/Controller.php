@@ -23,6 +23,8 @@ class Controller
         $this->view->form();
     }
 
+
+
     public function AgregarMaterial()
     {
 
@@ -30,6 +32,14 @@ class Controller
         $aceptado = $_POST['aceptado'];
         $condicion = $_POST['condicion'];
 
-        $this->materialesModel->AgregarMaterial($material, $aceptado, $condicion);
+
+
+        if (!empty($material) && !empty($aceptado) && !empty($condicion)) {
+
+            $this->materialesModel->AgregarMaterial($material, $aceptado, $condicion);
+            $this->view->showExito("se ha insertado correctamente");
+        } else {
+            $this->view->showError("debe completar los campos de categoria,nombre y precio OBLIGATORIOS");
+        }
     }
 }
