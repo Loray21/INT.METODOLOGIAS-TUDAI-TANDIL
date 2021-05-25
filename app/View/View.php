@@ -19,6 +19,6 @@ require_once('libs/smarty/libs/Smarty.class.php');
             echo "<h1>ERROR!</h1>";
             echo "<h2>{$msgError}</h2>";
         }
-        
+
     }
 ?>
