@@ -13,7 +13,7 @@
 
     $r = new Router(); 
 
-    // $r->addRoute("home", "GET", "Controller", "mostrarHome"); ejemplo
+    $r->addRoute("materiales", "GET", "Controller", "materiales");
   
     // $r->setDefaultRoute("controller", "mostrarHome"); ejemplo
 
