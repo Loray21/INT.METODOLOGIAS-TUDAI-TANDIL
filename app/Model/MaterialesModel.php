@@ -23,4 +23,8 @@ class MaterialesModel
         $sentencia = $this->db->prepare("INSERT INTO material(material,aceptado,condicion) VALUES(?,?,?)");
         $sentencia->execute(array($material, $aceptado, $condicion));
     }
+    
+    public function removeMaterial($materialId) {
+        $this->db->prepare("DELETE FROM material WHERE id=?")->execute(array((int) $materialId[":ID"]));
+    }
 }

@@ -49,7 +49,7 @@
         </div>
     </nav>
 
-    <div class="modal  fade" id="login" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="login" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-body position-relative">
@@ -97,7 +97,7 @@
                 {include file="templates/form.tpl" }
 
             </div>
-            <div class="col-8">
+            <div  id="materiales" class="col-8">
                 <h1 class=" text-end fs-1 font-bold"> ¿ Que material aceptamos ? </h1>
                 <div class="  myImg end-0 start-0 ">
                     {include file="templates/materiales.tpl"}

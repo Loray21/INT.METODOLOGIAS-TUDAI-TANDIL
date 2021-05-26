@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-05-2021 a las 23:19:24
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.6
+-- Tiempo de generación: 26-05-2021 a las 03:09:17
+-- Versión del servidor: 10.4.19-MariaDB
+-- Versión de PHP: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,9 +39,9 @@ CREATE TABLE `material` (
 --
 
 INSERT INTO `material` (`id`, `material`, `aceptado`, `condicion`) VALUES
-(1, 'Carton', 1, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
-(2, 'Plastico', 0, 'ssssssssssss'),
-(3, 'Fierro', 1, 'fgffffds');
+(1111112, 'asdasd', 1, 'asdasd'),
+(1111113, 'erwer', 1, 'werwer'),
+(1111114, 'sdfsdf', 0, 'sdfsdf');
 
 -- --------------------------------------------------------
 
@@ -56,9 +56,16 @@ CREATE TABLE `pedido` (
   `direccion` varchar(25) NOT NULL,
   `telefono` int(10) NOT NULL,
   `franja_horaria` varchar(15) NOT NULL,
-  `categoria_volumen` char(1) NOT NULL,
+  `categoria_volumen` varchar(75) NOT NULL,
   `imagen` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `pedido`
+--
+
+INSERT INTO `pedido` (`id`, `nombre`, `apellido`, `direccion`, `telefono`, `franja_horaria`, `categoria_volumen`, `imagen`) VALUES
+(2, 'asdasd', 'asdasd', 'asdasd', 0, 'asdasd', 'Entra en el baul de un auto', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -84,13 +91,13 @@ ALTER TABLE `pedido`
 -- AUTO_INCREMENT de la tabla `material`
 --
 ALTER TABLE `material`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1111112;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1111115;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

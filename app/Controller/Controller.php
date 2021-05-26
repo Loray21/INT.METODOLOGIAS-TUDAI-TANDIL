@@ -69,8 +69,7 @@ class Controller
             die();
         }
     }
-
-
+    
     public function AgregarMaterial()
     {
 
@@ -86,22 +85,26 @@ class Controller
     }
         
     public function agregarPedido() {
-        
-            $nombre = $_POST['nombre'];
-            $apellido = $_POST['apellido'];
-            $direccion = $_POST['direccion'];
-            $telefono = $_POST['telefono'];
-            $franja_horaria = $_POST['franja_horaria'];
-            $categoria_volumen = $_POST['categoria_volumen'];
-            $imagen = $_POST['imagen'];
-            if (!empty($nombre)  && !empty($apellido) && !empty($direccion) && !empty($telefono) && !empty($franja_horaria) && !empty($categoria_volumen)) {
-                if(!empty($imagen)){
-                    $this->pedidosModel->guardarPedido($nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria_volumen, $imagen);   
-                } else{
-                    $imagen = null;
-                    $this->pedidosModel->guardarPedido($nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria_volumen, $imagen);
-                }
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $direccion = $_POST['direccion'];
+        $telefono = $_POST['telefono'];
+        $franja_horaria = $_POST['franja_horaria'];
+        $categoria_volumen = $_POST['categoria_volumen'];
+        $imagen = $_POST['imagen'];
+        if (!empty($nombre)  && !empty($apellido) && !empty($direccion) && !empty($telefono) && !empty($franja_horaria) && !empty($categoria_volumen)) {
+            if(!empty($imagen)){
+                $this->pedidosModel->guardarPedido($nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria_volumen, $imagen);
+            } else{
+                $imagen = null;
+                $this->pedidosModel->guardarPedido($nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria_volumen, $imagen);
             }
-            header("Location: " . BASE_URL . "home");
+        }
+        header("Location: " . BASE_URL . "home");
+    }
+
+    public function removeMaterial($materialId=null) {
+        $this->materialesModel->removeMaterial($materialId);
+        header("Location: " . BASE_URL . "home");
     }
 }
