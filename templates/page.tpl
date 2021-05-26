@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Roboto:wght@100&family=Secular+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Odor+Mean+Chey&family=Roboto:wght@100&family=Secular+One&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <title>Coopearativa</title>
 
@@ -33,20 +33,16 @@
                         <a class="nav-link font-bold fs-5" href="#materiales">Materiales</a>
                     </li>
                     <li class="nav-item text-align-center">
-                    {if $isUserLoggedIn eq false}
+                        {if $isUserLoggedIn eq false}
                         <button type="button" class="btn btn-green text-white btn-pill px-5 py-3" data-bs-toggle="modal" data-bs-target="#login">
                             Log in
-                        </button>
-                    {else}
-                    <button href="BASE_URL/pedidos" type="button" class="btn font-bold nav-link">
-                        Pedidos
-                    </button>
+                        </button> {else}
                         <div class="btn-group">
-                            <a class="btn stretched-link btn-red text-white btn-pill p-0 px-5 py-3 " href="logout">
+                            <a class="btn stretched-link btn-red text-white btn-pill p-0 px-5 py-3 " href="{BASE_URL}/logout">
                                 Log out
                             </a>
                         </div>
-                    {/if}
+                        {/if}
                     </li>
                 </ul>
             </div>
@@ -80,39 +76,49 @@
             </div>
         </div>
     </div>
-    <div class="container mt-5 pt-5 position-relative h-75 ">
+    <div class="container mt-5 pt-5 position-relative h-75 mb-5">
         <div class="row">
             <div>
                 <h1 class="fs-1 font-bold">
                     COOPERATIVA DE RECUPERADORES<br> URBANOS DE TANDIL
                 </h1>
                 <p>
-                    Somo una cooperativa de recicladores urbanos que lucha<br>por cambiar nuestra comunidad, para dejarle<br>un mejor mundo a nuestros hijos
+                    Somos una cooperativa de recicladores urbanos que lucha<br>por cambiar nuestra comunidad, para dejarle<br>un mejor mundo a nuestros hijos
                 </p>
                 <div class="position-absolute top-0 end-0 z-index">
-                    <img src="imagenes/reciclando_1.png" alt="" width="475px">
+                    <img src="{BASE_URL}imagenes/reciclando_1.png" alt="" width="475px">
                 </div>
             </div>
         </div>
     </div>
-    <div class =" miContainer p-4 h-75">
+    <div class=" miContainer p-4 h-75">
         <div class="row  align-items-center">
-            <div class="col-4 " >
+            <div class="col-4 ">
                 {include file="templates/form.tpl" }
 
             </div>
             <div class="col-8">
-                <h1 class=" text-end fs-1 font-bold"> ¿ Que material aceptamos ? </h1> 
-                <div class="  myImg end-0 start-0 "> 
+                <h1 class=" text-end fs-1 font-bold"> ¿ Que material aceptamos ? </h1>
+                <div class="  myImg end-0 start-0 ">
                     {include file="templates/materiales.tpl"}
                 </div>
             </div>
         </div>
     </div>
-<div class="container">
-    {include file="templates/formAgregarPedido.tpl"}
-    {include file="templates/listaPedido.tpl"}
-</div>
-        <link rel="stylesheet" href="{$BASE_URL}css/css.css">
+    <div class="container">
+        <div class="row">
+            <div class="col-4 img-hojas z-index"></div>
+            <div class="col-md-8 col-offset-3">
+                <div class="mt-5">
+                    {include file="templates/formAgregarPedido.tpl"}
+                </div>
+                <div class="m-5">
+                    {if $isUserLoggedIn eq true} {include file="templates/listaPedido.tpl"} {/if}
+                </div>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="{$BASE_URL}css/css.css">
 </body>
+
 </html>

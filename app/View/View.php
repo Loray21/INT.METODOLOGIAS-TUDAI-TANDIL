@@ -12,16 +12,13 @@ class View
         $this->smarty = new Smarty();
     }
 
-    function renderHome($isUserLoggedIn, $materiales)
+    function renderHome($isUserLoggedIn, $materiales, $pedidos = null)
     {
         $this->smarty->assign("BASE_URL", BASE_URL);
         $this->smarty->assign('materiales', $materiales);
+        $this->smarty->assign('pedidos', $pedidos);
         $this->smarty->assign("isUserLoggedIn", $isUserLoggedIn);
         $this->smarty->display("templates/page.tpl");
-    }
-
-    function renderPedidos($pedidos){
-        $this->smarty->assign('pedidos', $pedidos);
     }
 
 }

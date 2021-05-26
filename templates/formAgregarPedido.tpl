@@ -25,10 +25,10 @@
     <div class="form-group col-md-6">
         <label>Selecione la categoria de sus materiales</label>
         <select class="form-select" aria-label="Default select example" name="categoria_volumen">
-            <option selected>Entra en un carro</option>
-            <option value="2">Entra en el baul de un auto</option>
-            <option value="3">Necesito una camioneta</option>
-            <option value="4">Necesito un camion</option>
+            <option value="Entra en un carro" selected>Entra en un carro</option>
+            <option value="Entra en el baul de un auto">Entra en el baul de un auto</option>
+            <option value="Necesito una camioneta">Necesito una camioneta</option>
+            <option value="Necesito un camion">Necesito un camion</option>
           </select>
     </div>
     <div class="form-group col-md-6">
@@ -37,7 +37,7 @@
     </div>
  </div>
 
-  <button type="submit" class="btn btn-primary">Enviar</button>
+  <button type="submit" class="btn btn-primary btn-pill mt-3">Enviar</button>
 
 </form>
 

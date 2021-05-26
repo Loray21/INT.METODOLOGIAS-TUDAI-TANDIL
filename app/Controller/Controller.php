@@ -25,7 +25,10 @@ class Controller
 
     function showHome()
     {
-        $this->view->renderHome($this->isUserLoggedIn(), $this->materiales());
+        $this->view->renderHome($this->isUserLoggedIn(), 
+                                $this->materiales(), 
+                                $this->pedidosModel->getPedidos()
+            );
     }
 
     function login()
@@ -91,7 +94,6 @@ class Controller
             $franja_horaria = $_POST['franja_horaria'];
             $categoria_volumen = $_POST['categoria_volumen'];
             $imagen = $_POST['imagen'];
-    
             if (!empty($nombre)  && !empty($apellido) && !empty($direccion) && !empty($telefono) && !empty($franja_horaria) && !empty($categoria_volumen)) {
                 if(!empty($imagen)){
                     $this->pedidosModel->guardarPedido($nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria_volumen, $imagen);   
@@ -102,9 +104,4 @@ class Controller
             }
             header("Location: " . BASE_URL . "home");
     }
-
-    function mostrarPedidos(){
-        $this->view->renderPedidos($this->pedidosModel->getPedidos());
-    }
-
 }

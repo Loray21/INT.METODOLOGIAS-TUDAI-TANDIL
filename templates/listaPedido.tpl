@@ -1,4 +1,4 @@
-<table>
+<table class="table">
     <thead>
     <tr>
       <th scope="col">Nombre</th>
@@ -12,7 +12,6 @@
   <tbody>
     {foreach from=$pedidos item=pedido}
         <tr>
-            <th scope="row"> {$material->material|capitalize} </th>
             <td> {$pedido->nombre} </td>
             <td> {$pedido->apellido} </td>
             <td> {$pedido->direccion} </td>
