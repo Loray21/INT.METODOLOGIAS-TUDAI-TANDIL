@@ -19,4 +19,9 @@ class View
         $this->smarty->assign("isUserLoggedIn", $isUserLoggedIn);
         $this->smarty->display("templates/page.tpl");
     }
+
+    function renderPedidos($pedidos){
+        $this->smarty->assign('pedidos', $pedidos);
+    }
+
 }

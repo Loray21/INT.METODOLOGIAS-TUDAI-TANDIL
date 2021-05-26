@@ -18,7 +18,6 @@ class Controller
         $this->pedidosModel = new PedidosModel();
     }
 
-
     private function materiales()
     {
         return $this->materialesModel->getMateriales();
@@ -76,16 +75,36 @@ class Controller
         $aceptado = $_POST['aceptado'];
         $condicion = $_POST['condicion'];
 
-
-
         if (!empty($material) && !empty($condicion)) {
-
-
             $this->materialesModel->AgregarMaterial($material, $aceptado, $condicion);
-
+        } 
             header("Location: " . BASE_URL . "home");
-        } else {
-            header("Location: " . BASE_URL . "home");
-        }
+        
     }
+        
+    public function agregarPedido() {
+        
+            $nombre = $_POST['nombre'];
+            $apellido = $_POST['apellido'];
+            $direccion = $_POST['direccion'];
+            $telefono = $_POST['telefono'];
+            $franja_horaria = $_POST['franja_horaria'];
+            $categoria_volumen = $_POST['categoria_volumen'];
+            $imagen = $_POST['imagen'];
+    
+            if (!empty($nombre)  && !empty($apellido) && !empty($direccion) && !empty($telefono) && !empty($franja_horaria) && !empty($categoria_volumen)) {
+                if(!empty($imagen)){
+                    $this->pedidosModel->guardarPedido($nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria_volumen, $imagen);   
+                } else{
+                    $imagen = null;
+                    $this->pedidosModel->guardarPedido($nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria_volumen, $imagen);
+                }
+            }
+            header("Location: " . BASE_URL . "home");
+    }
+
+    function mostrarPedidos(){
+        $this->view->renderPedidos($this->pedidosModel->getPedidos());
+    }
+
 }

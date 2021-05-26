@@ -17,7 +17,8 @@ $r->addRoute("login", "POST", "Controller", "login");
 $r->addRoute("logout", "GET", "Controller", "logout");
 
 $r->addRoute("home", "GET", "Controller", "showHome");
-
+$r->addRoute("nuevoPedido", "POST", "Controller", "agregarPedido");
+$r->addRoute("pedidos", "GET", "Controller", "mostrarPedidos");
 
 $r->setDefaultRoute("controller", "showHome");
 

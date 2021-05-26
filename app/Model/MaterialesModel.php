@@ -18,8 +18,6 @@ class MaterialesModel
         return $consulta->fetchAll(PDO::FETCH_OBJ);
     }
 
-
-
     public function AgregarMaterial($material, $aceptado, $condicion)
     {
         $sentencia = $this->db->prepare("INSERT INTO material(material,aceptado,condicion) VALUES(?,?,?)");

@@ -38,6 +38,9 @@
                             Log in
                         </button>
                     {else}
+                    <button href="BASE_URL/pedidos" type="button" class="btn font-bold nav-link">
+                        Pedidos
+                    </button>
                         <div class="btn-group">
                             <a class="btn stretched-link btn-red text-white btn-pill p-0 px-5 py-3 " href="logout">
                                 Log out
@@ -92,20 +95,23 @@
             </div>
         </div>
     </div>
-    <div class =" miContainer p-4 "> 
-    <div class="row  align-items-center">
-        <div class="col-4 " >
-            {include file="templates/form.tpl" }
+    <div class =" miContainer p-4 h-75">
+        <div class="row  align-items-center">
+            <div class="col-4 " >
+                {include file="templates/form.tpl" }
 
-        </div>
-    <div class="col-8">
-        <h1 class=" text-end fs-1 font-bold"> ¿ Que material aceptamos ? </h1> 
-        <div class="  myImg end-0 start-0 "> 
-            {include file="templates/materiales.tpl"}
-
-
+            </div>
+            <div class="col-8">
+                <h1 class=" text-end fs-1 font-bold"> ¿ Que material aceptamos ? </h1> 
+                <div class="  myImg end-0 start-0 "> 
+                    {include file="templates/materiales.tpl"}
+                </div>
+            </div>
         </div>
     </div>
+<div class="container">
+    {include file="templates/formAgregarPedido.tpl"}
+    {include file="templates/listaPedido.tpl"}
 </div>
         <link rel="stylesheet" href="{$BASE_URL}css/css.css">
 </body>
