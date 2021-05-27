@@ -27,7 +27,7 @@
                         <a class="nav-link font-bold fs-5" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link font-bold  fs-5" href="#foro">Foro</a>
+                        <a class="nav-link font-bold  fs-5" href="#Pedidos">Pedidos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link font-bold fs-5" href="#materiales">Materiales</a>
@@ -94,7 +94,7 @@
     <div class=" miContainer p-4 h-75">
         <div class="row  align-items-center">
             <div class="col-4 ">
-                {include file="templates/form.tpl" }
+                {if $isUserLoggedIn eq true} {include file="templates/form.tpl" }  {/if}
 
             </div>
             <div  id="materiales" class="col-8">
@@ -112,7 +112,7 @@
                 <div class="mt-5">
                     {include file="templates/formAgregarPedido.tpl"}
                 </div>
-                <div class="m-5">
+                <div class="m-5" id="Pedidos">
                     {if $isUserLoggedIn eq true} {include file="templates/listaPedido.tpl"} {/if}
                 </div>
             </div>
