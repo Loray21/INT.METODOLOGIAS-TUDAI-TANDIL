@@ -28,20 +28,19 @@
         <div class="modal-body">
             <form id= "fomulario " action="agregar" method="POST" enctype="multipart/form-data">
                 <div class="container">
-                    <div class="col-4">
-                    <input class="form-control" id= "form" type="text"  name="material" placeholder="Material">
-                           <input class="form-control" type="text"   name="condicion" placeholder="Condiciones de entrega">
-                           <select class="form-select" aria-label="Default select example" name="aceptado">
-                            <option selected >Seleccione una opcion</option>
-                            <option name = "aceptado" value="1">Aceptado</option>
-                            <option name= "aceptado " value="0">Rechazado</option>
-                          </select>
-        
-        
-                    <input   type="submit"  value=agregar  class="btn btn-primary mr-2">
-            </div>
-        </div>
-        </form>
+                    <div class="col-6">
+                        <input class="form-control" id= "form" type="text"  name="material" placeholder="Material">
+                               <input class="form-control" type="text" name="condicion" placeholder="Condiciones de entrega">
+                               <select class="form-select" aria-label="Default select example" name="aceptado">
+                                <option selected >Seleccione una opcion</option>
+                                <option name = "aceptado" value="1">Aceptado</option>
+                                <option name= "rechazado " value="0">Rechazado</option>
+                              </select>
+
+                        <input type="submit" value=agregar class="btn btn-primary mr-2">
+                    </div>
+                </div>
+            </form>
         </div>
         <div class="modal-footer">
 
@@ -50,14 +49,10 @@
     </div>
   </div>
 
-
-</body>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
 
 
-    </body>
-  </html>
-
+</body>
 </html>

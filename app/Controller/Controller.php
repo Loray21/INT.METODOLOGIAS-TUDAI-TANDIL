@@ -4,6 +4,7 @@ require_once("app/Model/MaterialesModel.php");
 require_once("app/Model/PedidosModel.php");
 require_once("app/View/View.php");
 
+
 class Controller
 {
 
@@ -23,10 +24,10 @@ class Controller
         return $this->materialesModel->getMateriales();
     }
 
-    function showHome()
+    public function showHome()
     {
         $this->view->renderHome($this->isUserLoggedIn(), 
-                                $this->materiales(), 
+                                $this->materiales(),
                                 $this->pedidosModel->getPedidos()
             );
     }
@@ -70,18 +71,17 @@ class Controller
         }
     }
     
-    public function AgregarMaterial()
+    public function agregarMaterial()
     {
-
         $material = $_POST['material'];
         $aceptado = $_POST['aceptado'];
         $condicion = $_POST['condicion'];
 
         if (!empty($material) && !empty($condicion)) {
-            $this->materialesModel->AgregarMaterial($material, $aceptado, $condicion);
-        } 
-            header("Location: " . BASE_URL . "home");
-        
+            $this->materialesModel->agregarMaterial($material, $aceptado, $condicion);
+        }
+
+        header("Location: " . BASE_URL . "home");
     }
         
     public function agregarPedido() {
@@ -107,4 +107,19 @@ class Controller
         $this->materialesModel->removeMaterial($materialId);
         header("Location: " . BASE_URL . "home");
     }
+
+    public function update() {
+
+        $id = $_POST['materialId'];
+
+        $name = $_POST['materialName'];
+        $accepted = $_POST['materialAccepted'];
+
+        if (isset($name) && isset($accepted)) {
+            $this->materialesModel->update($id, $name, $accepted);
+        }
+
+        header("Location: " . BASE_URL . "home");
+    }
+
 }

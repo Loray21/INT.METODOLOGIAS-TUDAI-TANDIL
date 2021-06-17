@@ -36,3 +36,8 @@
     background-position: center;
     transform: rotateX('90deg');
 }
+
+.showModalUpdate {
+    display: none;
+    position: absolute;
+}

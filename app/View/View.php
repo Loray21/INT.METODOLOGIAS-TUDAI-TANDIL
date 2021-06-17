@@ -18,6 +18,7 @@ class View
         $this->smarty->assign('materiales', $materiales);
         $this->smarty->assign('pedidos', $pedidos);
         $this->smarty->assign("isUserLoggedIn", $isUserLoggedIn);
+        $this->smarty->assign("showUpdateMaterial", $isUserLoggedIn);
         $this->smarty->display("templates/page.tpl");
     }
 

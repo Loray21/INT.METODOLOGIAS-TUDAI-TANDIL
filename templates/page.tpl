@@ -91,11 +91,11 @@
             </div>
         </div>
     </div>
+    {include file="templates/modal.tpl"}
     <div class=" miContainer p-4 h-75">
         <div class="row  align-items-center">
             <div class="col-4 ">
                 {if $isUserLoggedIn eq true} {include file="templates/form.tpl" }  {/if}
-
             </div>
             <div  id="materiales" class="col-8">
                 <h1 class=" text-end fs-1 font-bold"> ¿ Que material aceptamos ? </h1>
@@ -119,6 +119,7 @@
         </div>
     </div>
     <link rel="stylesheet" href="{$BASE_URL}css/css.css">
+    <script type="text/javascript" src="./app/js/main.js"></script>
 </body>
 
 </html>
