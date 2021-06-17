@@ -12,10 +12,11 @@ class View
         $this->smarty = new Smarty();
     }
 
-    function renderHome($isUserLoggedIn, $materiales, $pedidos = null)
+    function renderHome($isUserLoggedIn, $materiales, $materialesAceptados, $pedidos = null)
     {
         $this->smarty->assign("BASE_URL", BASE_URL);
         $this->smarty->assign('materiales', $materiales);
+        $this->smarty->assign('materialesAceptados', $materialesAceptados);
         $this->smarty->assign('pedidos', $pedidos);
         $this->smarty->assign("isUserLoggedIn", $isUserLoggedIn);
         $this->smarty->assign("showUpdateMaterial", $isUserLoggedIn);

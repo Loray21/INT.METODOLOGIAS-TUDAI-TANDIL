@@ -33,4 +33,34 @@ class MaterialesModel
         $consulta->execute(array($name, $accepted, $materialId));
         return $consulta->fetchAll(PDO::FETCH_OBJ);
     }
+    public function getMaterialesAceptados() {
+        $consulta = $this->db->prepare("SELECT * FROM material WHERE aceptado = true");
+        $consulta->execute();
+        return $consulta->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function getMaterialAceptados($materialId) {
+        $consulta = $this->db->prepare("SELECT * FROM material WHERE aceptado = true AND id = ?");
+        $consulta->execute(array($materialId));
+        return $consulta->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function getMaterialRecolectadoPorCartonero($materialId, $cartoneroId) {
+        $consulta = $this->db->prepare("SELECT * FROM material_recolectado WHERE  id_material=? AND id_cartonero=?");
+        $consulta->execute(array($materialId, $cartoneroId));
+        return $consulta->fetchAll(PDO::FETCH_OBJ);
+    }
+    
+    public function agregarMaterialRecolectado($peso,  $materialId, $cartoneroId)
+    {
+        $query = "";
+        $existeMaterial = $this->getMaterialRecolectadoPorCartonero($materialId, $cartoneroId);
+        if(!(isset($existeMaterial)&&$existeMaterial)) {
+            $query = "INSERT INTO material_recolectado(peso,id_material,id_cartonero) VALUES(?,?,?)";
+        } else {
+            $query = 'UPDATE material_recolectado SET peso=(peso+?) WHERE id_material=? AND id_cartonero=?';
+        }
+        $sentencia = $this->db->prepare($query);
+        $sentencia->execute(array( $peso, $materialId, $cartoneroId));
+    }
 }

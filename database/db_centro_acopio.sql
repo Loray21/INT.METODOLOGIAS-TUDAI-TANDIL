@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2021 a las 03:09:17
+-- Tiempo de generación: 17-06-2021 a las 14:05:09
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.6
 
@@ -39,9 +39,33 @@ CREATE TABLE `material` (
 --
 
 INSERT INTO `material` (`id`, `material`, `aceptado`, `condicion`) VALUES
-(1111112, 'asdasd', 1, 'asdasd'),
-(1111113, 'erwer', 1, 'werwer'),
-(1111114, 'sdfsdf', 0, 'sdfsdf');
+(1111115, 'Platico de algo', 1, 'Aplastado'),
+(1111117, 'Cartones', 1, 'Secos'),
+(1111118, 'Vidrio', 0, 'Roto'),
+(1111120, 'Vidrio', 0, 'De cocacola'),
+(1111121, 'Vidrio de Pepsi', 1, 'Sano');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `material_recolectado`
+--
+
+CREATE TABLE `material_recolectado` (
+  `id_material` int(11) NOT NULL,
+  `id_cartonero` int(8) NOT NULL,
+  `peso` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `material_recolectado`
+--
+
+INSERT INTO `material_recolectado` (`id_material`, `id_cartonero`, `peso`) VALUES
+(1111115, 1, 100),
+(1111115, 2, 223),
+(1111115, 123, 12),
+(1111117, 1, 12);
 
 -- --------------------------------------------------------
 
@@ -55,7 +79,7 @@ CREATE TABLE `pedido` (
   `apellido` varchar(25) NOT NULL,
   `direccion` varchar(25) NOT NULL,
   `telefono` int(10) NOT NULL,
-  `franja_horaria` varchar(15) NOT NULL,
+  `franja_horaria` varchar(50) NOT NULL,
   `categoria_volumen` varchar(75) NOT NULL,
   `imagen` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -65,7 +89,7 @@ CREATE TABLE `pedido` (
 --
 
 INSERT INTO `pedido` (`id`, `nombre`, `apellido`, `direccion`, `telefono`, `franja_horaria`, `categoria_volumen`, `imagen`) VALUES
-(2, 'asdasd', 'asdasd', 'asdasd', 0, 'asdasd', 'Entra en el baul de un auto', NULL);
+(3, 'Juan Carlos', 'Gonzales', 'San Martin 2313', 11235423, '9  a  12hs  o  ', 'Entra  en  el  baúl  de  un  auto', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -76,6 +100,12 @@ INSERT INTO `pedido` (`id`, `nombre`, `apellido`, `direccion`, `telefono`, `fran
 --
 ALTER TABLE `material`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `material_recolectado`
+--
+ALTER TABLE `material_recolectado`
+  ADD PRIMARY KEY (`id_material`,`id_cartonero`);
 
 --
 -- Indices de la tabla `pedido`
@@ -91,13 +121,23 @@ ALTER TABLE `pedido`
 -- AUTO_INCREMENT de la tabla `material`
 --
 ALTER TABLE `material`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1111115;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1111122;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `material_recolectado`
+--
+ALTER TABLE `material_recolectado`
+  ADD CONSTRAINT `fk__material_recolactdo_material` FOREIGN KEY (`id_material`) REFERENCES `material` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

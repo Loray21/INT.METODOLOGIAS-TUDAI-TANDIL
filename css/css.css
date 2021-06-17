@@ -34,10 +34,18 @@
 .img-hojas {
     background-image: url(../imagenes/hojas.png);
     background-position: center;
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: top;
     transform: rotateX('90deg');
 }
 
 .showModalUpdate {
     display: none;
     position: absolute;
+}
+
+.editBtn {
+    background-color: transparent;
+    border: none;
 }

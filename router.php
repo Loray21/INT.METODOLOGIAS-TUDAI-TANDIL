@@ -23,6 +23,7 @@ $r->addRoute("nuevoPedido", "POST", "Controller", "agregarPedido");
 $r->addRoute("pedidos", "GET", "Controller", "mostrarPedidos");
 
 // Materiales
+$r->addRoute("agregarMaterialRecolectado", "POST", "Controller", "agregarMaterialRecolectado");
 $r->addRoute("agregar", "POST", "Controller", "agregarMaterial");
 $r->addRoute("material/:ID", "GET", "Controller", "removeMaterial");
 $r->addRoute("home", "POST", "Controller", "update");
