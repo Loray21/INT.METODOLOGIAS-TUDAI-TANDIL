@@ -105,19 +105,32 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container img-hojas z">
         <div class="row">
-            <div class="col-4 img-hojas z-index"></div>
+            <div class="col-4 z-index"></div>
             <div class="col-md-8 col-offset-3">
                 <div class="mt-5">
                     {include file="templates/formAgregarPedido.tpl"}
                 </div>
-                <div class="m-5" id="Pedidos">
-                    {if $isUserLoggedIn eq true} {include file="templates/listaPedido.tpl"} {/if}
-                </div>
+                {if $isUserLoggedIn eq true} 
+                    <div class="m-5" id="Pedidos">
+                        {include file="templates/listaPedido.tpl"}
+                    </div>
+                {/if}
             </div>
         </div>
+        {if $isUserLoggedIn eq true} 
+            <div class="row">
+                <div class="col ">
+                <h1 class=" text-end fs-1 font-bold"> Igrese la cantidad de material recolectado por un Cartonero </h1>
+                    <div class="mt-5 mr-5 position-relative top-0 start-50">
+                            {include file="templates/formAgregarMaterialRecolectado.tpl"}
+                    </div>
+                </div>
+            </div>
+        {/if}
     </div>
+</div>
     <link rel="stylesheet" href="{$BASE_URL}css/css.css">
 </body>
 

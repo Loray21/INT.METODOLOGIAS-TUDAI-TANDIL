@@ -27,8 +27,21 @@ class Controller
     {
         $this->view->renderHome($this->isUserLoggedIn(), 
                                 $this->materiales(), 
-                                $this->pedidosModel->getPedidos()
+                                $this->materialesModel->getMaterialesAceptados(),
+                                $this->pedidosModel->getPedidos()   
             );
+    }
+
+    function agregarMaterialRecolectado() {
+        $peso =    $_POST['peso'];
+        $materialId =  $_POST['materialId'];
+        $cartoneroId = $_POST['cartoneroId'];
+        if(isset($peso)&&isset($materialId)&&isset($cartoneroId)) {
+            if(true) {
+                $this->materialesModel->agregarMaterialRecolectado($peso,  $materialId, $cartoneroId);
+            }
+        }
+        header("Location: " . BASE_URL . "home");
     }
 
     function login()
@@ -107,4 +120,5 @@ class Controller
         $this->materialesModel->removeMaterial($materialId);
         header("Location: " . BASE_URL . "home");
     }
+
 }
