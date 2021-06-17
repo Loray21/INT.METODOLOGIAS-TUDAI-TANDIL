@@ -122,7 +122,7 @@
         {if $isUserLoggedIn eq true} 
             <div class="row">
                 <div class="col ">
-                <h1 class=" text-end fs-1 font-bold"> Igrese la cantidad de material recolectado por un Cartonero </h1>
+                <h1 class=" text-end fs-1 font-bold"> Ingrese la cantidad de material recolectado por un Cartonero </h1>
                     <div class="mt-5 mr-5 position-relative top-0 start-50">
                             {include file="templates/formAgregarMaterialRecolectado.tpl"}
                     </div>
