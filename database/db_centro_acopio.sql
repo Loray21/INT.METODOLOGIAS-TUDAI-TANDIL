@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-06-2021 a las 14:05:09
+-- Tiempo de generación: 28-06-2021 a las 22:51:49
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.6
 
@@ -24,6 +24,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `cartonero`
+--
+
+CREATE TABLE `cartonero` (
+  `id_cartonero` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `apellido` varchar(100) NOT NULL,
+  `direccion` varchar(120) NOT NULL,
+  `telefono` int(20) NOT NULL,
+  `franja_horaria_preferida` varchar(120) NOT NULL,
+  `dni` int(8) NOT NULL,
+  `vehiculo` varchar(120) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `material`
 --
 
@@ -39,11 +56,11 @@ CREATE TABLE `material` (
 --
 
 INSERT INTO `material` (`id`, `material`, `aceptado`, `condicion`) VALUES
-(1111115, 'Platico de algo', 1, 'Aplastado'),
-(1111117, 'Cartones', 1, 'Secos'),
-(1111118, 'Vidrio', 0, 'Roto'),
-(1111120, 'Vidrio', 0, 'De cocacola'),
-(1111121, 'Vidrio de Pepsi', 1, 'Sano');
+(1111115, 'Platico', 1, 'Aplastado'),
+(1111118, 'Vidrio', 1, 'Roto'),
+(1111120, 'Vidrio', 1, 'De cocacola'),
+(1111121, 'Vidrio de Pepsi', 1, 'Sano'),
+(1111122, 'Carton', 0, 'asd');
 
 -- --------------------------------------------------------
 
@@ -62,10 +79,10 @@ CREATE TABLE `material_recolectado` (
 --
 
 INSERT INTO `material_recolectado` (`id_material`, `id_cartonero`, `peso`) VALUES
-(1111115, 1, 100),
-(1111115, 2, 223),
-(1111115, 123, 12),
-(1111117, 1, 12);
+(1111120, 10000000, 150),
+(1111120, 20000000, 120),
+(1111120, 40000000, 120),
+(1111121, 20000, 150);
 
 -- --------------------------------------------------------
 
@@ -89,11 +106,18 @@ CREATE TABLE `pedido` (
 --
 
 INSERT INTO `pedido` (`id`, `nombre`, `apellido`, `direccion`, `telefono`, `franja_horaria`, `categoria_volumen`, `imagen`) VALUES
-(3, 'Juan Carlos', 'Gonzales', 'San Martin 2313', 11235423, '9  a  12hs  o  ', 'Entra  en  el  baúl  de  un  auto', NULL);
+(3, 'Juan Carlos', 'Gonzales', 'San Martin 2313', 11235423, '9  a  12hs  o  ', 'Entra  en  el  baúl  de  un  auto', NULL),
+(4, '123', '234', '23423', 234, '234', 'Entra en el baul de un auto', NULL);
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `cartonero`
+--
+ALTER TABLE `cartonero`
+  ADD PRIMARY KEY (`id_cartonero`);
 
 --
 -- Indices de la tabla `material`
@@ -118,16 +142,22 @@ ALTER TABLE `pedido`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `cartonero`
+--
+ALTER TABLE `cartonero`
+  MODIFY `id_cartonero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de la tabla `material`
 --
 ALTER TABLE `material`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1111122;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1111123;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
