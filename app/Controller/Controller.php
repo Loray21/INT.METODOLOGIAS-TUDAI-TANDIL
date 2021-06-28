@@ -2,6 +2,7 @@
 
 require_once("app/Model/MaterialesModel.php");
 require_once("app/Model/PedidosModel.php");
+require_once("app/Model/CartoneroModel.php");
 require_once("app/View/View.php");
 
 
@@ -11,12 +12,14 @@ class Controller
     private $view;
     private $materialesModel;
     private $pedidosModel;
+    private $cartoneroModel;
 
     function __construct()
     {
         $this->view = new View();
         $this->materialesModel = new MaterialesModel();
         $this->pedidosModel = new PedidosModel();
+        $this->cartoneroModel = new CartoneroModel();
     }
 
     private function materiales()
@@ -29,6 +32,7 @@ class Controller
         $this->view->renderHome($this->isUserLoggedIn(), 
                                 $this->materiales(),
                                 $this->materialesModel->getMaterialesAceptados(),
+                                $this->cartoneroModel->getCartoneros(),
                                 $this->pedidosModel->getPedidos()
             );
     }

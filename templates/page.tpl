@@ -116,9 +116,20 @@
                     <div class="m-5" id="Pedidos">
                         {include file="templates/listaPedido.tpl"}
                     </div>
+                    <div>
+                        <h1 class=" text-end fs-1 font-bold"> Lista de cartoneros</h1>
+                        <div>
+                            {include file="templates/listaCartonero.tpl"}
+                        </div>
+                    </div>
                 {/if}
             </div>
         </div>
+        {if $isUserLoggedIn eq true} 
+            <div class="row">
+                
+            </div>
+        {/if}
         {if $isUserLoggedIn eq true} 
             <div class="row">
                 <div class="col ">
