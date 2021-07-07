@@ -160,4 +160,10 @@ class Controller
 
         header("Location: " . BASE_URL . "home");
     }
+
+    public function deleteCartonero($params=null) {
+        $cartonero = $params[':ID'];
+        $this->cartoneroModel->deleteCartonero($cartonero);
+        header("Location: " . BASE_URL . "home");
+    }
 }

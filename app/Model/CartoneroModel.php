@@ -24,8 +24,12 @@ class CartoneroModel
     {
 
 
-        $sentencia = $this->db->prepare("INSERT INTO cartonero(apellido,direccion,DNI,franja_horaria_preferida,nombre,telefono,vehiculo) VALUES(?,?,?,?,?,?,?)");
+        $sentencia = $this->db->prepare("INSERT INTO cartonero(nombre, apellido, DNI, franja_horaria_preferida, direccion, telefono, vehiculo) VALUES(?,?,?,?,?,?,?)");
 
         $sentencia->execute(array($nombre, $apellido, $direccion, $telefono, $franja_horaria, $dni, $vehiculo));
+    }
+
+    function deleteCartonero($id){
+        $consulta = $this->db->prepare("DELETE FROM cartonero WHERE id_cartonero = ?")->execute(array($id));
     }
 }
