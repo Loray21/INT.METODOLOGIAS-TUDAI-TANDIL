@@ -18,4 +18,14 @@ class CartoneroModel
         return $consulta->fetchAll(PDO::FETCH_OBJ);
     }
 
+
+
+    function agregarCartonero($nombre, $apellido, $direccion, $telefono, $franja_horaria, $dni, $vehiculo)
+    {
+
+
+        $sentencia = $this->db->prepare("INSERT INTO cartonero(apellido,direccion,DNI,franja_horaria_preferida,nombre,telefono,vehiculo) VALUES(?,?,?,?,?,?,?)");
+
+        $sentencia->execute(array($nombre, $apellido, $direccion, $telefono, $franja_horaria, $dni, $vehiculo));
+    }
 }

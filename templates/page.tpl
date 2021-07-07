@@ -140,6 +140,16 @@
                 </div>
             </div>
         {/if}
+        <div class="container">
+            <div class="row  ">
+                <div class="col-8 ">
+                {include file="templates/formAgregarCartonero.tpl" } 
+                </div>
+                
+            </div>
+        </div>
+
+
     </div>
     {if $isUserLoggedIn eq true}
         <table class="table">

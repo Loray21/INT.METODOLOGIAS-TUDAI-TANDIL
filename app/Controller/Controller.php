@@ -1,6 +1,7 @@
 <?php
 
 require_once("app/Model/MaterialesModel.php");
+require_once("app/Model/CartoneroModel.php");
 require_once("app/Model/PedidosModel.php");
 require_once("app/Model/CartoneroModel.php");
 require_once("app/Model/materialPorCartoneroModel.php");
@@ -31,6 +32,7 @@ class Controller
     }
 
     public function showHome()
+<<<<<<< HEAD
     { 
         $this->view->renderHome($this->isUserLoggedIn(), 
                                 $this->materiales(),
@@ -39,14 +41,25 @@ class Controller
                                 $this->pedidosModel->getPedidos(),
                                 $this->materialPorCartoneroModel->getMaterialesPorCartonero()
             );
+=======
+    {
+        $this->view->renderHome(
+            $this->isUserLoggedIn(),
+            $this->materiales(),
+            $this->materialesModel->getMaterialesAceptados(),
+            $this->cartoneroModel->getCartoneros(),
+            $this->pedidosModel->getPedidos()
+        );
+>>>>>>> 6ba27fa6ccd7f4e7ce43683fc7c44c8a2addd776
     }
 
-    function agregarMaterialRecolectado() {
+    function agregarMaterialRecolectado()
+    {
         $peso =    $_POST['peso'];
         $materialId =  $_POST['materialId'];
         $cartoneroId = $_POST['cartoneroId'];
-        if(isset($peso)&&isset($materialId)&&isset($cartoneroId)) {
-            if(true) {
+        if (isset($peso) && isset($materialId) && isset($cartoneroId)) {
+            if (true) {
                 $this->materialesModel->agregarMaterialRecolectado($peso,  $materialId, $cartoneroId);
             }
         }
@@ -91,7 +104,7 @@ class Controller
             die();
         }
     }
-    
+
     public function agregarMaterial()
     {
         $material = $_POST['material'];
@@ -104,32 +117,36 @@ class Controller
 
         header("Location: " . BASE_URL . "home");
     }
-        
-    public function agregarPedido() {
+
+    public function agregarPedido()
+    {
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];
-        $direccion = $_POST['direccion'];
+        $calle = $_POST['calle'];
+        $numero = $_POST['numero'];
         $telefono = $_POST['telefono'];
         $franja_horaria = $_POST['franja_horaria'];
         $categoria_volumen = $_POST['categoria_volumen'];
         $imagen = $_POST['imagen'];
-        if (!empty($nombre)  && !empty($apellido) && !empty($direccion) && !empty($telefono) && !empty($franja_horaria) && !empty($categoria_volumen)) {
-            if(!empty($imagen)){
-                $this->pedidosModel->guardarPedido($nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria_volumen, $imagen);
-            } else{
+        if (!empty($nombre)  && !empty($apellido) && !empty($calle) && !empty($telefono) && !empty($franja_horaria) && !empty($categoria_volumen)) {
+            if (!empty($imagen)) {
+                $this->pedidosModel->guardarPedido($nombre, $apellido, $calle, $numero, $telefono, $franja_horaria, $categoria_volumen, $imagen);
+            } else {
                 $imagen = null;
-                $this->pedidosModel->guardarPedido($nombre, $apellido, $direccion, $telefono, $franja_horaria, $categoria_volumen, $imagen);
+                $this->pedidosModel->guardarPedido($nombre, $apellido, $calle, $numero, $telefono, $franja_horaria, $categoria_volumen, $imagen);
             }
         }
         header("Location: " . BASE_URL . "home");
     }
 
-    public function removeMaterial($materialId=null) {
+    public function removeMaterial($materialId = null)
+    {
         $this->materialesModel->removeMaterial($materialId);
         header("Location: " . BASE_URL . "home");
     }
 
-    public function update() {
+    public function update()
+    {
 
         $id = $_POST['materialId'];
 
@@ -141,5 +158,25 @@ class Controller
         }
 
         header("Location: " . BASE_URL . "home");
+<<<<<<< HEAD
     } 
+=======
+    }
+
+
+    public function agregarCartonero()
+    {
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $franja_horaria = $_POST['franja_horaria_preferida'];
+        $direccion = $_POST['direccion'];
+        $telefono = $_POST['telefono'];
+        $dni = $_POST['dni'];
+        $vehiculo = $_POST['vehiculo'];
+
+        $this->cartoneroModel->agregarCartonero($nombre, $apellido, $direccion, $telefono, $franja_horaria, $dni, $vehiculo);
+
+        header("Location: " . BASE_URL . "home");
+    }
+>>>>>>> 6ba27fa6ccd7f4e7ce43683fc7c44c8a2addd776
 }
