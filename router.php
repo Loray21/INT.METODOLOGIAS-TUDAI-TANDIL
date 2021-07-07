@@ -28,6 +28,11 @@ $r->addRoute("agregar", "POST", "Controller", "agregarMaterial");
 $r->addRoute("material/:ID", "GET", "Controller", "removeMaterial");
 $r->addRoute("home", "POST", "Controller", "update");
 
+// CARTONEROS 
+$r->addRoute("agregarCartonero", "POST", "Controller", "agregarCartonero");
+
+
+
 $r->setDefaultRoute("controller", "showHome");
 
 $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']);

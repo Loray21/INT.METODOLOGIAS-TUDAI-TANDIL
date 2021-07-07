@@ -129,6 +129,16 @@
                 </div>
             </div>
         {/if}
+        <div class="container">
+            <div class="row  ">
+                <div class="col-8 ">
+                {include file="templates/formAgregarCartonero.tpl" } 
+                </div>
+                
+            </div>
+        </div>
+
+
     </div>
 </div>
     <link rel="stylesheet" href="{$BASE_URL}css/css.css">
