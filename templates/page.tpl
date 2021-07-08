@@ -91,7 +91,7 @@
             </div>
         </div>
     </div>
-    {include file="templates/modal.tpl"}
+    {include file="templates/modalUpdateMaterial.tpl"}
     <div class=" miContainer p-4 h-75">
         <div class="row  align-items-center">
             <div class="col-4 ">
@@ -116,6 +116,7 @@
                     <div class="m-5" id="Pedidos">
                         {include file="templates/listaPedido.tpl"}
                     </div>
+                    {include file="templates/modalUpdateCartonero.tpl"}
                     <div>
                         <h1 class=" text-end fs-1 font-bold"> Lista de cartoneros</h1>
                         <div>
