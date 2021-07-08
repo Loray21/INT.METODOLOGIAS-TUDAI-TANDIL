@@ -40,12 +40,12 @@
     transform: rotateX('90deg');
 }
 
-.showModalUpdate {
+.showModalUpdate, .updateCartoneroModal {
     display: none;
     position: absolute;
 }
 
-.editBtn {
+.editBtn, .editCartoneroBtn {
     background-color: transparent;
     border: none;
 }

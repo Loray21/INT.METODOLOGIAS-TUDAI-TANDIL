@@ -138,7 +138,6 @@ class Controller
     {
 
         $id = $_POST['materialId'];
-
         $name = $_POST['materialName'];
         $accepted = $_POST['materialAccepted'];
 
@@ -172,6 +171,23 @@ class Controller
     public function deleteCartonero($params=null) {
         $cartonero = $params[':ID'];
         $this->cartoneroModel->deleteCartonero($cartonero);
+        header("Location: " . BASE_URL . "home");
+    }
+
+    public function updateCartonero() {
+
+        $name = $_POST['cartoneroName'];
+        $surname = $_POST['cartoneroSurname'];
+        $address = $_POST['cartoneroAddress'];
+        $phone = $_POST['cartoneroPhone'];
+        $document = $_POST['cartoneroDocument'];
+        $vehicle = $_POST['cartoneroVehicle'];
+        $hour = $_POST['cartoneroHorario'];
+
+        if (isset($name) && isset($surname) && isset($address) && isset($phone) && isset($document) && isset($vehicle) && isset($hour)) {
+            $this->cartoneroModel->updateCartonero($name, $surname, $address , $phone, $vehicle, $hour, $document);
+        }
+
         header("Location: " . BASE_URL . "home");
     }
 

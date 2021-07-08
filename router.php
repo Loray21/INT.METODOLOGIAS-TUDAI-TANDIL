@@ -31,7 +31,7 @@ $r->addRoute("home", "POST", "Controller", "update");
 // CARTONEROS 
 $r->addRoute("agregarCartonero", "POST", "Controller", "agregarCartonero");
 $r->addRoute("cartonero/:ID", "GET", "Controller", "deleteCartonero");
-
+$r->addRoute("update-cartonero", "POST", "Controller", "updateCartonero");
 
 $r->setDefaultRoute("controller", "showHome");
 
