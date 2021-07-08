@@ -57,7 +57,6 @@ function addUpdateCartoneroButtonListeners() {
         let element = editCartoneroBtn[i];
 
         element.addEventListener('click', () => {
-            let cartoneroId = element.getAttribute('idCartonero');
             let cartoneroName = element.getAttribute('cartoneroName');
             let cartoneroSurname = element.getAttribute('cartoneroSurname');
             let cartoneroDocument = element.getAttribute('cartoneroDocument');
@@ -68,16 +67,15 @@ function addUpdateCartoneroButtonListeners() {
 
             updateCartoneroModal.classList.toggle('updateCartoneroModal');
 
-            let id = document.querySelector('#idCartonero');
             let name = document.querySelector('#cartoneroName');
             let surname = document.querySelector('#cartoneroSurname');
+            console.log(cartoneroDocument);
             let dni = document.querySelector('#cartoneroDocument');
             let hour = document.querySelector('#cartoneroHorario');
             let address = document.querySelector('#cartoneroAddress');
             let phone = document.querySelector('#cartoneroPhone');
             let vehicle = document.querySelector('#cartoneroVehicle');
 
-            id.value = cartoneroId;
             name.value = cartoneroName;
             surname.value = cartoneroSurname;
             dni.value = cartoneroDocument;

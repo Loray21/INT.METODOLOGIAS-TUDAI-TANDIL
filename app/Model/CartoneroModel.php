@@ -33,12 +33,12 @@ class CartoneroModel
         $this->db->prepare("DELETE FROM cartonero WHERE id_cartonero = ?")->execute(array($id));
     }
 
-    function updateCartonero($id, $name, $surname, $address , $phone, $document, $vehicle, $hour) {
+    function updateCartonero($name, $surname, $address , $phone, $vehicle, $hour, $document) {
         $query = $this->db->prepare(
-            "UPDATE cartonero SET nombre=?, apellido=?, direccion=?, telefono=?, dni=?, vehiculo=?, franja_horaria_preferida=? WHERE id_cartonero = ? "
+            "UPDATE cartonero SET nombre=?, apellido=?, direccion=?, telefono=?, vehiculo=?, franja_horaria_preferida=? WHERE id_cartonero = ? "
         );
-        $query->execute(array($name, $surname, $address , $phone, $document, $vehicle, $hour, $id));
+        $query->execute(array($name, $surname, $address , $phone, $vehicle, $hour, $document));
         return $query->fetchAll(PDO::FETCH_OBJ);
-    }
 
+}
 }

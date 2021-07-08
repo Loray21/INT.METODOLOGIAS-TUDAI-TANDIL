@@ -176,7 +176,6 @@ class Controller
 
     public function updateCartonero() {
 
-        $id = $_POST['idCartonero'];
         $name = $_POST['cartoneroName'];
         $surname = $_POST['cartoneroSurname'];
         $address = $_POST['cartoneroAddress'];
@@ -186,7 +185,7 @@ class Controller
         $hour = $_POST['cartoneroHorario'];
 
         if (isset($name) && isset($surname) && isset($address) && isset($phone) && isset($document) && isset($vehicle) && isset($hour)) {
-            $this->cartoneroModel->updateCartonero($id, $name, $surname, $address , $phone, $document, $vehicle, $hour);
+            $this->cartoneroModel->updateCartonero($name, $surname, $address , $phone, $vehicle, $hour, $document);
         }
 
         header("Location: " . BASE_URL . "home");

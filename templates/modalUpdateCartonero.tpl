@@ -10,7 +10,6 @@
                 <div class="container">
                     <div class="row justify-content-md-center">
                         <div class="col-6">
-                            <input class="form-control invisible" id= "idCartonero" type="text"  name="idCartonero">
                             <input class="form-control" id= "cartoneroName" type="text"  name="cartoneroName">
                             <input class="form-control" id= "cartoneroSurname" type="text"  name="cartoneroSurname">
                             <input class="form-control" id= "cartoneroDocument" type="text"  name="cartoneroDocument">
