@@ -16,7 +16,7 @@
         <tr>
             <td> {$cartonero->nombre} </td>
             <td> {$cartonero->apellido} </td>
-            <td> {$cartonero->dni} </td>
+            <td> {$cartonero->id_cartonero} </td>
             <td> {$cartonero->franja_horaria_preferida} </td>
             <td> {$cartonero->direccion} </td>
             <td> {$cartonero->telefono} </td>

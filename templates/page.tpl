@@ -151,6 +151,29 @@
 
 
     </div>
+    {if $isUserLoggedIn eq true}
+    <h1 class=" text-end fs-1 font-bold">Listado de materiales por cartonero</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col"> MATERIAL </th>
+                <th scope="col"> PESO </th>
+                <th scope="col"> DNI </th>
+                <th scope="col"> NOMBRE RECOLECTOR </th>
+                </tr>
+            </thead>
+            <tbody> 
+            {foreach from=$matPorCartoneros item=object}
+                <tr>
+                    <th scope="row"> {$object->material} </th>
+                    <td> {$object->peso}</td>
+                    <td> {$object->id_cartonero} </td>
+                    <td> {$object->nombre} </td>
+                </tr>
+            {/foreach}
+        </table>
+    {/if}
+
 </div>
     <link rel="stylesheet" href="{$BASE_URL}css/css.css">
     <script type="text/javascript" src="./app/js/main.js"></script>

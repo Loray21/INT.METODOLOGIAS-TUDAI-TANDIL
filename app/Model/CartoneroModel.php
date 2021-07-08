@@ -24,9 +24,9 @@ class CartoneroModel
     {
 
 
-        $sentencia = $this->db->prepare("INSERT INTO cartonero(nombre, apellido, DNI, franja_horaria_preferida, direccion, telefono, vehiculo) VALUES(?,?,?,?,?,?,?)");
+        $sentencia = $this->db->prepare("INSERT INTO cartonero(nombre, apellido, id_cartonero, franja_horaria_preferida, direccion, telefono, vehiculo) VALUES(?,?,?,?,?,?,?)");
 
-        $sentencia->execute(array($nombre, $apellido, $direccion, $telefono, $franja_horaria, $dni, $vehiculo));
+        $sentencia->execute(array($nombre, $apellido,$dni, $franja_horaria, $direccion, $telefono, $vehiculo));
     }
 
     function deleteCartonero($id){
